@@ -15,7 +15,6 @@ non_toxic_comments = [
     "Excellent work, well done!"
 ]
 
-# Create a DataFrame
 data = []
 for _ in range(5000):
     # 5000 toxic comments
@@ -23,12 +22,9 @@ for _ in range(5000):
     # 5000 non-toxic comments
     data.append([random.choice(non_toxic_comments), 0])
 
-# Shuffle the dataset
 random.shuffle(data)
 
-# Convert to DataFrame
 df = pd.DataFrame(data, columns=['comment', 'label'])
 
-# Save to CSV
 df.to_csv('comments.csv', index=False)
 print("Sample dataset created as 'comments.csv'")
